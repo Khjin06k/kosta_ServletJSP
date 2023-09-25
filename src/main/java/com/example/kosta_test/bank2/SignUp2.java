@@ -15,7 +15,7 @@ import java.io.IOException;
 public class SignUp2 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        RequestDispatcher dispatcher = req.getRequestDispatcher("signup2.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/bank2/signup2.jsp");
         dispatcher.forward(req, res);
     }
 
@@ -34,7 +34,7 @@ public class SignUp2 extends HttpServlet {
         HttpSession session = req.getSession();
         session.setAttribute("member", member);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("login2.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/bank2/login2.jsp");
         dispatcher.forward(req, res);
     }
 }

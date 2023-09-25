@@ -23,7 +23,7 @@ public class LogOut2 extends HttpServlet {
         session.removeAttribute("id");
 
         // login.jsp 페이지로 포워딩
-        RequestDispatcher dispatcher = req.getRequestDispatcher("login.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/bank2/login2.jsp");
         dispatcher.forward(req, res);
     }
 }

@@ -19,11 +19,11 @@ public class MakeAccount2 extends HttpServlet {
         HttpSession session = req.getSession();
         if(session.getAttribute("id")==null){
             req.setAttribute("err", "로그인 하세요.");
-            req.getRequestDispatcher("error.jsp").forward(req, res);
+            req.getRequestDispatcher("/bank2/error.jsp").forward(req, res);
             return;
         }
         // header2.jsp에서의 요청
-        RequestDispatcher dispatcher = req.getRequestDispatcher("makeAccount2.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/bank2/makeAccount2.jsp");
         dispatcher.forward(req, res);
     }
 
@@ -52,7 +52,7 @@ public class MakeAccount2 extends HttpServlet {
 
         // accountInfo2.jsp 로 포워딩
         // 모든 jsp에서 헤더를 포함하고 있기 때문에 main.jsp가 아닌 accountInfo2.jsp를 포워딩하면 됨
-        RequestDispatcher dispatcher = req.getRequestDispatcher("accountInfo2.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/bank2/accountInfo2.jsp");
         dispatcher.forward(req, res);
     }
 }

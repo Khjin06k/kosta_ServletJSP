@@ -46,7 +46,7 @@ public class Deposit2 extends HttpServlet {
         // 만약 계좌가 존재하지 않는다면
         if(acc == null){
             req.setAttribute("err", "계좌번호가 틀립니다.");
-            dispatcher = req.getRequestDispatcher("error.jsp");
+            dispatcher = req.getRequestDispatcher("/bank2/error.jsp");
         }else{
             // 계좌가 존재한다면
             acc.deposit(money);
@@ -56,7 +56,7 @@ public class Deposit2 extends HttpServlet {
             req.setAttribute("acc", acc);
 
             // deposit2.jsp를 포워딩함
-            dispatcher = req.getRequestDispatcher("deposit2.jsp");
+            dispatcher = req.getRequestDispatcher("/bank2/deposit2.jsp");
         }
 
 

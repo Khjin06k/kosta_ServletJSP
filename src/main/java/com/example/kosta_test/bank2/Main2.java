@@ -12,7 +12,7 @@ import java.io.IOException;
 public class Main2 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        RequestDispatcher dispatcher = req.getRequestDispatcher("main2.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/bank2/main2.jsp");
         dispatcher.forward(req, res);
     }
 

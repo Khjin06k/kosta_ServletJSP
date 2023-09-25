@@ -23,7 +23,7 @@ public class Withdraw2 extends HttpServlet {
             return;
         }
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("withdraw2.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/bank2/withdraw2.jsp");
         dispatcher.forward(req, res);
     }
 
@@ -46,7 +46,7 @@ public class Withdraw2 extends HttpServlet {
         // 만약 계좌번호가 존재하지 않는다면
         if(dispatcher == null){
             req.setAttribute("err", "계좌번호가 존재하지 않습니다.");
-            dispatcher = req.getRequestDispatcher("error.jsp");
+            dispatcher = req.getRequestDispatcher("/bank2/error.jsp");
         }else{
             //계좌번호가 존재한다면
             acc.withdraw(money); // 출금
@@ -56,7 +56,7 @@ public class Withdraw2 extends HttpServlet {
             req.setAttribute("acc", acc);
 
             // withdraw2.jsp로 포워딩 진행
-            dispatcher = req.getRequestDispatcher("withdraw2.jsp");
+            dispatcher = req.getRequestDispatcher("/bank2/withdraw2.jsp");
         }
 
         // withdraw를 포워딩 진행

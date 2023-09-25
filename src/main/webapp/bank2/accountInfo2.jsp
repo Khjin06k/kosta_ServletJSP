@@ -6,7 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<% Account acc = (Account)request.getAttribute("acc");%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html>
 
 <head>
@@ -57,23 +58,23 @@
     <table >
         <tr>
             <th>계좌번호</th>
-            <td><input type="text" name="id" disabled value=<%= acc.getId()%>></td>
+            <td><input type="text" name="id" disabled value="${acc.id}"></td>
         </tr>
         <tr>
             <th>이름</th>
-            <td> <input type="text" name = "name" disabled value=<%= acc.getName()%>></td>
+            <td> <input type="text" name = "name" disabled value="${acc.name}"></td>
         </tr>
         <tr>
             <th>입금액</th>
-            <td> <input type="text" name="money" disabled value=<%= acc.getBalance()%>></td>
+            <td> <input type="text" name="money" disabled value="${acc.money}"></td>
         </tr>
         <tr>
             <th>종류</th>
-            <td> <input type="text" disabled value=<%= acc.getType()%>></td>
+            <td> <input type="text" disabled value="${acc.type}"></td>
         </tr>
         <tr>
             <th>등급</th>
-            <td> <input type="text" disabled value=<%= acc.getGrade()%>></td>
+            <td> <input type="text" disabled value="${acc.grade}"></td>
         </tr>
     </table>
     </form>

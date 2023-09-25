@@ -23,7 +23,7 @@ public class AllAccountInfo2 extends HttpServlet {
         HttpSession session = req.getSession();
         if(session.getAttribute("id")==null){
             req.setAttribute("err", "로그인 하세요.");
-            req.getRequestDispatcher("error.jsp").forward(req, res);
+            req.getRequestDispatcher("/bank2/error2.jsp").forward(req, res);
             return;
         }
 
@@ -47,11 +47,11 @@ public class AllAccountInfo2 extends HttpServlet {
         // 만약 계좌가 하나도 없을 경우
         if(accs.isEmpty()){
             req.setAttribute("err", "개설된 계좌가 없습니다.");
-            dispatcher = req.getRequestDispatcher("error.jsp");
+            dispatcher = req.getRequestDispatcher("error2.jsp");
         }else{
             // 개설된 계좌가 있는 경우
             req.setAttribute("accs", accs);
-            dispatcher = req.getRequestDispatcher("allAccountInfo2.jsp");
+            dispatcher = req.getRequestDispatcher("/bank2/allAccountInfo2.jsp");
         }
         dispatcher.forward(req, res);
 

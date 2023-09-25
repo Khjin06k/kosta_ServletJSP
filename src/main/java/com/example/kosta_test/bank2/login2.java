@@ -15,7 +15,7 @@ import java.io.IOException;
 public class login2 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        RequestDispatcher dispatcher = req.getRequestDispatcher("login2.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/bank2/login2.jsp");
         dispatcher.forward(req, res);
     }
 
@@ -36,25 +36,25 @@ public class login2 extends HttpServlet {
         // 조회된 회원이 없다면
         if(member==null){
             req.setAttribute("err", "존재하지 않는 회원입니다.");
-            dispatcher = req.getRequestDispatcher("error.jsp");
+            dispatcher = req.getRequestDispatcher("/bank2/error.jsp");
             dispatcher.forward(req, res);
             return;
         }
         if(member.getId().equals(id)){
             req.setAttribute("err", "아이디가 틀립니다.");
-            dispatcher = req.getRequestDispatcher("error.jsp");
+            dispatcher = req.getRequestDispatcher("/bank2/error.jsp");
             dispatcher.forward(req, res);
             return;
         }
         if(member.getPassword().equals(pw)) {
             req.setAttribute("err", "비밀번호가 틀립니다.");
-            dispatcher = req.getRequestDispatcher("error.jsp");
+            dispatcher = req.getRequestDispatcher("/bank2/error.jsp");
             dispatcher.forward(req, res);
             return;
         }
 
         req.setAttribute("id", id);
-        dispatcher = req.getRequestDispatcher("makeAccount2.jsp");
+        dispatcher = req.getRequestDispatcher("/bank2/makeAccount2.jsp");
         dispatcher.forward(req, res);
     }
 }
